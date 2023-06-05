@@ -1,0 +1,41 @@
+.div1 {
+    background-image: url("../../../assets/Images/flowerBackground1.jpg"); 
+    min-height: 450px;
+    background-size: cover; 
+    background-position: center;
+}
+
+.sadrzajPocetna {
+    text-align: end; 
+    padding-top: 110px;
+    padding-right: 30px;
+}
+.sadrzajPocetna1{
+    text-align: end; 
+    padding-right: 30px;
+}
+.btnPocetna{
+    float: right; 
+    color: white;
+    margin-right: 30px;
+}
+.forma{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.slike{
+    width: 250px;
+}
+.rozaPozadina{
+    background-color: rgb(255, 136, 156); 
+    text-align: center;
+}
+h3{
+    padding-top: 150px;
+    color: white;
+}
+.cvece{
+    padding-left: 0px; 
+    padding-right: 0px;
+}

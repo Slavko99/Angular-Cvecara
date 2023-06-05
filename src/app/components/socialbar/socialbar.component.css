@@ -1,0 +1,15 @@
+.icon-bar {
+    position: fixed;
+    top: 50%;
+    background-color: white;
+
+}
+.icon-bar a {
+    display: block;
+}
+.icon-bar i {
+    color: black;
+    padding: 3px;
+    padding-top: 10px;
+
+}

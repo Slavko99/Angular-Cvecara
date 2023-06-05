@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center div1">
+            <h2>Log In</h2>
+            <p>New to this site? <a (click)="NavigateToSignUp()">Sign Up</a></p>
+            <div class="col-12 d-flex justify-content-center">
+                <form  (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+                    <div class="form-group">
+                        <label for="email" >Email</label><br>
+                        <input type="text" class="form-control" id="email" ngModel name="email" required email #email="ngModel">
+                        <p class="help-block warning" *ngIf="!email.valid && email.touched" style="margin-bottom: 0px; text-align: left; color: red;">Email is required</p>
+                    </div>
+                    <div class="form-group  mb-5">
+                        <label for="Password">Password</label><br>
+                        <input type="password" class="form-control" id="password" ngModel name="password" required minlength="5" #password="ngModel">
+                        <p class="help-block warning" *ngIf="!password.valid && password.touched" style="margin-bottom: 0px; text-align: left; color: red;">Password is required</p>
+                    </div>
+                    <p class="tekst">Forgot password?</p>
+                    <div class="col-12">
+                        <button class="btn btn-light" [disabled]="!myForm.valid" (click)="authService.SignIn(email.value,password.value)">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

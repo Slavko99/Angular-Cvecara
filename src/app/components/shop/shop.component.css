@@ -1,0 +1,9 @@
+img{
+    width: 150px;
+    border-bottom: 2px solid pink;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: black;
+}

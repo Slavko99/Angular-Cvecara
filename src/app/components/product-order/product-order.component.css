@@ -1,0 +1,19 @@
+.forma{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.red{
+    width: 500px;
+}
+span{
+    color: red;
+    font-size: 13px;
+    margin: 0px;
+}
+button{
+    width: 150px;
+}
+form{
+    width: 600px;
+}

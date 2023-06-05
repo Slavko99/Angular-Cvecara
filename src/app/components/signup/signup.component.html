@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center div1">
+            <h2>Sign Up</h2>
+            <div class="col-12 d-flex justify-content-center">
+                <form  (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+                    <div class="form-group">
+                        <label for="firstname">First Name</label><br>
+                        <input type="text" class="form-control" id="firstname" name="firstname" ngModel required minlength="5" #firstname="ngModel">
+                        <p class="error-msg" *ngIf="!firstname.valid && firstname.touched" style="margin-bottom: 0px; text-align: left; color: red;">Name is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label><br>
+                        <input type="text" class="form-control" id="lastname" name="lastname" ngModel required minlength="5" #lastname="ngModel">
+                        <p class="help-block" *ngIf="!lastname.valid && lastname.touched" style="margin-bottom: 0px; text-align: left; color: red;">Surname is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" >Email</label><br>
+                        <input type="text" class="form-control" id="email" ngModel name="email" required email #email="ngModel">
+                        <p class="help-block" *ngIf="!email.valid && email.touched" style="margin-bottom: 0px; text-align: left; color: red;">Email is required</p>
+                    </div>
+                    <div class="form-group  mb-5">
+                        <label for="Password">Password</label><br>
+                        <input type="password" class="form-control" id="password" ngModel name="password" required minlength="5" #password="ngModel">
+                        <p class="help-block" *ngIf="!password.valid && password.touched" style="margin-bottom: 0px; text-align: left; color: red;">Password is required</p>
+                    </div>
+                    <p class="tekst">Forgot password?</p>
+                    <div class="col-12">
+                        <button class="btn btn-light" [disabled]="!myForm.valid" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="authService.SignUp(email.value, password.value)">Log In</button>
+                        <p>Already a member? <a (click)="NavigateToLogIn()">Log In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog mt-5" style="border: 2px solid black" >
+      <div class="modal-content">
+        <div class="modal-body text-center p-4">
+          <h3>Thank You for Registering</h3>
+          <p>We have sent a confirmation email to your email.</p>
+          <p>Please check your email and click on the link to verify your email address.</p>
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-dark resendButton"  data-bs-dismiss="modal" (click)="authService.SendVerificationMail()">Resend Verification Email</button>
+            <button type="button" class="btn btn-dark loginButton" (click)="NavigateToLogin()" data-bs-dismiss="modal">Log In</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>

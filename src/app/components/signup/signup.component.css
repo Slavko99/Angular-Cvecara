@@ -1,0 +1,44 @@
+.div1{
+    background-image: url("../../../assets/Images/loginBackground.jpg");
+    background-size: cover; 
+    background-position: center;
+    height: 800px;
+
+}
+h2{
+    margin-top: 170px;
+}
+a{
+    color: black;
+    cursor: pointer;
+}
+p{
+    font-size: 12px;
+}
+input{
+    width: 300px;
+}
+label{
+    float: left;
+}
+button{
+    width: 300px;
+}
+.tekst{
+    float: left;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+span{
+    float: left;
+    color: red;
+    font-size: 10px;
+}
+.loginButton{
+    width: 81px;
+    margin-left: 5px;
+}
+.resendButton{
+    width: 204px;
+}

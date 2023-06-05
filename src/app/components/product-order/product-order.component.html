@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row ">
+        <div class="col-12 mt-3 d-flex justify-content-center">
+            <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                <div class="form-floating">
+                    <input type="text" class="form-control forma" id="floatingInput" placeholder="First Name" formControlName="fname">
+                    <label for="floatingInput">First Name<span>*</span>:</label>
+                    <span *ngIf="!signUpForm.controls['fname'].valid && signUpForm.controls['fname'].touched">First Name is required.</span>
+                </div>
+                <div class="form-floating mt-3">
+                    <input type="text" class="form-control forma" id="floatingInput" placeholder="Last Name" formControlName="lname">
+                    <label for="floatingInput">Last Name<span>*</span>:</label>
+                    <span *ngIf="!signUpForm.controls['lname'].valid && signUpForm.controls['lname'].touched">Last Name is required.</span>
+                </div>
+                <div class="form-floating mt-3">
+                    <input type="text" class="form-control forma" id="floatingInput" placeholder="Email" formControlName="email">
+                    <label for="floatingInput">Email address<span>*</span>:</label>
+                    <span *ngIf="!signUpForm.controls['email'].valid && signUpForm.controls['email'].touched">Email is required.</span>
+                </div>
+                <div class="form-floating mt-3">
+                    <input type="text" class="form-control forma" id="floatingInput" placeholder="Phone Number" formControlName="phone">
+                    <label for="floatingInput">Phone Number<span>*</span>:</label>
+                    <span *ngIf="!signUpForm.controls['phone'].valid && signUpForm.controls['phone'].touched">Name is required.</span>
+                </div>
+                <div class="form-floating mt-3">
+                    <input type="text" class="form-control forma" id="floatingInput" placeholder="Address" formControlName="address">
+                    <label for="floatingInput">Address<span>*</span>:</label>
+                    <span *ngIf="!signUpForm.controls['address'].valid && signUpForm.controls['address'].touched">Address is required.</span>
+                </div>
+                <div class=" form-floating mt-3">
+                    <textarea class="form-control forma" id="comment" rows="6" placeholder="Comment" formControlName="comment"></textarea>
+                    <label for="comment" class="form-label">Comment:</label>
+                </div>
+                <div class="form-floating mt-3">
+                    <select name="club" id="club" class="form-control forma" formControlName="payment" >
+                        <option value="creditcard">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="payment on delivery">Payment on Delivery</option>
+                    </select>
+                    <label for="club" class="form-label">Payment method<span>*</span>:</label>
+                </div>
+                <div class="mt-3 text-center">
+                    <button class="btn btn-dark" type="submit" [disabled]="!signUpForm.valid">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

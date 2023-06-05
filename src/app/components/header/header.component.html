@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05"
+            aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarsExample05">
+            <img class="logo nav-item" src="../../assets/Images/flowerLogo.png">
+        </div>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarsExample05">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/about">About</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/shop">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" hreSf="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="kolica collapse navbar-collapse justify-content-end" id="navbarsExample05">
+            <i class="fa fa-user-circle-o ikonice nav-link korisnik" aria-hidden="true"></i>
+            <i class="fa fa-caret-down ikonice nav-link" aria-hidden="true"></i>
+            <ng-template [ngIf]="!authService.isLoggedIn">
+                <p class="me-1 ms-1 pt-3" (click)="NavigateToLogin()">Login</p>
+            </ng-template>
+            <ng-template [ngIf]="authService.isLoggedIn">
+                <p class="me-1 ms-1 pt-3" (click)="SignOut()">Log out</p>
+            </ng-template>
+
+            <i class="fa fa-shopping-cart ikonice position-relative nav-link" aria-hidden="true"
+                style="cursor: pointer;" (click)="NavigateToShoppingCart()">
+                <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary obavestenje">
+                    {{nekiBroj}}
+                    <span class="visually-hidden">unread messages</span>
+                </span>
+            </i>
+        </div>
+    </div>
+</nav>

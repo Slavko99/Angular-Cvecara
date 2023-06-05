@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <p>Home/Shop/{{currentProduct.CategoryId}}/{{currentProduct.name}}</p>
+            <div class="text-center text-sm-center text-md-start text-lg-end">
+              <img [src]="currentProduct.putanja" class="img-fluid">
+            </div>
+            
+        </div>
+        <div class="col-12 col-md-6 ">
+            <p style="text-align: right;"><span (click)="goPrev(currentProduct.Id)">
+                    < prev |</span><span (click)="goNext(currentProduct.Id)"> next ></span></p>
+            <h4>{{currentProduct.name}}</h4>
+            <h4>{{currentProduct.price}}$</h4>
+            <p>{{currentProduct.opis}}</p>
+            <hr>
+            <form (ngSubmit)="AddToShoppingCart(currentProduct)" #myForm="ngForm">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="form-control" id="quantity" ngModel name="quantity" required quantity #quantity="ngModel"><br>
+                <button class="btn btn-dark" [disabled]="!myForm.valid" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top: -40px;">Add To Cart</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="!authService.isLoggedIn">
+    <div class="modal-dialog mt-5" style="border: 2px solid black" >
+      <div class="modal-content" >
+        <div class="modal-body text-center p-4">
+          <h2>WE WANT TO MEET YOU</h2>
+          <p>Please, Login to continue enjoying shopping on our site</p>
+          <button type="button" class="btn btn-dark" (click)="NavigateToLogin()" data-bs-dismiss="modal">Log In</button>
+        </div>
+      </div>
+    </div>
+  </div>

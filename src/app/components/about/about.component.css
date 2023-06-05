@@ -1,0 +1,16 @@
+h2{
+    color: white;
+}
+.slika{
+    background-image: url("../../../assets/Images/MACRO_PLP_BANNER.jpg"); 
+    min-height: 380px;
+    background-size: cover; 
+    background-position: center;
+}
+.tekst{
+    color: white;
+}
+.divovi{
+    border-radius: 15px;
+    background-color: rgb(242, 239, 239);
+}

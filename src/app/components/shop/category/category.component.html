@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row mt-3 text-center">
+        <div class="col-12 col-md-4  mt-3 text-center" *ngFor="let product of currentCategory">
+            <img [src]="product.putanja" (click)="navigateToProduct(product.Id)"><br>
+            <a>{{product.name}}</a><br>
+            <i>{{product.price}}$</i>
+        </div>
+    </div>
+</div>
